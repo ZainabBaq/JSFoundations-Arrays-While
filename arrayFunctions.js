@@ -10,6 +10,7 @@
  */
 function isArrayLengthOdd(numbers) {
   // Your code here
+  return numbers.length % 2 != 0;
 }
 
 /**
@@ -24,6 +25,7 @@ function isArrayLengthOdd(numbers) {
  */
 function isArrayLengthEven(numbers) {
   // Your code here
+  return !isArrayLengthOdd(numbers);
 }
 
 /**
@@ -36,6 +38,8 @@ function isArrayLengthEven(numbers) {
  */
 function addLailaToArray(instructors) {
   // Your code here
+  instructors.push("Laila");
+  return instructors;
 }
 
 /**
@@ -48,6 +52,7 @@ function addLailaToArray(instructors) {
  */
 function eliminateTeam(teams) {
   // Your code here
+  return teams.pop();
 }
 
 /**
@@ -62,6 +67,9 @@ function eliminateTeam(teams) {
  */
 function secondHalfOfArrayIfItIsEven(fruits) {
   // Your code here
+  if (isArrayLengthEven(fruits))
+    return fruits.slice(fruits.length / 2, fruits.length);
+  else return [];
 }
 
 /**
@@ -78,8 +86,13 @@ function secondHalfOfArrayIfItIsEven(fruits) {
  * - Use string method .slice()
  * - Use string method .endsWith()
  */
+
 function youGottaCalmDown(shout) {
   // Your code here
+  while (shout.endsWith("!!")) {
+    shout = shout.slice(0, -1);
+  }
+  return shout;
 }
 
 module.exports = {
